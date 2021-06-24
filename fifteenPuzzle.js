@@ -22,6 +22,7 @@ function startNewGame()
   var randomNumber = 0;
   var count = 0;
   moves = 0;
+  time=0;
   rows = document.getElementById("rows").value;
   columns = document.getElementById("columns").value;
   textMoves.innerHTML = moves;
@@ -35,6 +36,7 @@ function startNewGame()
   }
   // Set up a temporary array for
   // allocating unique numbers.
+  
   arrayHasNumberBeenUsed = new Array( rows * columns );
   for (var i = 0; i < rows * columns; i++)
   {
@@ -111,7 +113,7 @@ function moveThisTile( tableRow, tableColumn)
     
   if (checkIfWinner())
   {
-    alert("Congratulations! You solved the puzzle in " + moves + " moves.");
+    alert("Congratulations! You solved the puzzle in " + moves + " moves."+"and you take"+time+"sec");
     startNewGame();
   }
 }
